@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.ycgwl.carrier"
+    package="lol.niconico.dev"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--  Normal Permissions 不需要运行时注册  -->
