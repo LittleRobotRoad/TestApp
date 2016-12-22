@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_no_network" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络消化不良"
+        android:textColor="#9f000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="请检查您的手机是否联网"
+        android:textColor="#7f000000"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnReload111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#f2f3f4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="重新加载"
+        android:textColor="#9f000000"
+        android:textSize="14sp" />
+
+</LinearLayout>

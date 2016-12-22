@@ -1,0 +1,133 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Start" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/bg_hello_welcome</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+    <style name="text_15_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="text_15_black">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="text_18_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="text_16_black">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_14_black">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="text_12_black">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_12_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="text_16_red">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_17_white">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17dp</item>
+    </style>
+
+    <style name="text_18_black">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="edit_oneline">
+        <item name="android:layout_height">@dimen/login_btn_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/space_lv1</item>
+        <item name="android:drawablePadding">@dimen/space_lv2</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="grid_sub_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:background">@drawable/bg_btn_pressed</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textColor">@color/gray2</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="text_view_enter_btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/space_lv5</item>
+        <item name="android:layout_marginLeft">@dimen/space_lv5</item>
+        <item name="android:layout_marginRight">@dimen/space_lv5</item>
+        <item name="android:background">@drawable/btn_login</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="line_gray_w_1px">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+    <style name="line_gray_h_1px">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+    <style name="edit_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">@dimen/space_lv</item>
+        <item name="android:background">@drawable/login_input_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingLeft">@dimen/space_lv1</item>
+        <item name="android:paddingRight">@dimen/space_lv1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+</resources>

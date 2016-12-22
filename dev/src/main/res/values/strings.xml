@@ -1,0 +1,15 @@
+<resources>
+    <string name="loading">加载中…</string>
+    <string name="recyclerViewLiner">LinearLayoutManager</string>
+    <string name="recyclerViewGrid">GridLayoutManager</string>
+
+
+    <string name="text_server_exp">服务器异常</string>
+    <string name="text_not_data">没有数据</string>
+    <string name="text_network_exp">网络异常</string>
+
+    <string name="permission_denied">未获得权限</string>
+    <string name="text_enter">确定</string>
+
+
+</resources>

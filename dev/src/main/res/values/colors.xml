@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4868f2</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="navigationBarColor">#77000000</color>
+
+    <color name="app_main_color">#4868f2</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="orange">#ffF6BA42</color>
+    <color name="yellow">#fba934</color>
+    <color name="red">#FF0000</color>
+    <color name="text_color_gray2">#999999</color>
+    <color name="text_color_black">#333333</color>
+    <color name="text_color_hint">#cccccc</color>
+    <color name="toast_bg">#9930302e</color>
+    <color name="line_gray">#dddddd</color>
+    <color name="login_pressed">#40a1fc</color>
+    <color name="button_normal">#f5696a</color>
+    <color name="button_pressed">#fca0a1</color>
+    <color name="gray">#dddddd</color>
+    <color name="gray2">#666666</color>
+
+    <color name="btn_pressed">#33000000</color>
+    <color name="btn_normal">#ffffffff</color>
+</resources>

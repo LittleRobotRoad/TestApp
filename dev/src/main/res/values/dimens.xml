@@ -1,0 +1,50 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="space_1dp">1dp</dimen>
+    <dimen name="space_lv">4dp</dimen>
+    <dimen name="space_lv1">8dp</dimen>
+    <dimen name="space_lv2">16dp</dimen>
+    <dimen name="space_lv3">24dp</dimen>
+    <dimen name="space_lv4">32dp</dimen>
+    <dimen name="space_lv5">40dp</dimen>
+    <dimen name="space_lv6">48dp</dimen>
+    <dimen name="space_lv7">56dp</dimen>
+    <dimen name="space_lv8">64dp</dimen>
+    <dimen name="space_lv9">72dp</dimen>
+    <dimen name="space_lv10">80dp</dimen>
+    <dimen name="space_lv11">88dp</dimen>
+    <dimen name="space_lv12">96dp</dimen>
+    <dimen name="space_lv13">104dp</dimen>
+    <dimen name="space_lv14">112dp</dimen>
+    <dimen name="space_lv15">120dp</dimen>
+    <dimen name="space_lv16">128dp</dimen>
+    <dimen name="space_lv17">136dp</dimen>
+    <dimen name="space_lv18">144dp</dimen>
+    <dimen name="space_lv19">152dp</dimen>
+    <dimen name="space_lv20">160dp</dimen>
+    <dimen name="space_lv21">168dp</dimen>
+    <dimen name="space_lv22">176dp</dimen>
+    <dimen name="space_lv23">184dp</dimen>
+    <dimen name="space_lv24">192dp</dimen>
+    <dimen name="space_lv25">200dp</dimen>
+    <dimen name="space_lv26">208dp</dimen>
+    <dimen name="space_lv27">216dp</dimen>
+    <dimen name="space_lv28">224dp</dimen>
+    <dimen name="space_lv29">232dp</dimen>
+    <dimen name="space_lv30">240dp</dimen>
+
+
+    <dimen name="title_bar_padding_top">0dp</dimen>
+    <dimen name="title_bar_height">48dp</dimen>
+
+    <dimen name="login_top_bg_height">180dp</dimen>
+    <dimen name="login_btn_height">50dp</dimen>
+
+    <dimen name="divide_10dp">10dp</dimen>
+    <dimen name="divide_5dp">5dp</dimen>
+    <dimen name="text_16dp">16dp</dimen>
+
+</resources>

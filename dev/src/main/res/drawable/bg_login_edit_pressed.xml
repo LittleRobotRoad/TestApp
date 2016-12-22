@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- This is the line -->
+    <item
+        android:left="@dimen/divide_10dp"
+        android:right="@dimen/divide_10dp">
+        <shape>
+            <solid android:color="@color/login_pressed"/>
+        </shape>
+    </item>
+    <item android:bottom="1px">
+        <shape>
+            <solid android:color="@color/white"/>
+        </shape>
+    </item>
+</layer-list>
