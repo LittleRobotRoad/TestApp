@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="lol.niconico.dev.ui.activity.base.CommonWebActivity"/>
+        <activity android:name=".activity.CommonWebActivity"/>
     </application>
 
 </manifest>

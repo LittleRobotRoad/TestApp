@@ -1,4 +1,4 @@
-package lol.niconico.dev.ui.activity.base;
+package lol.niconico.testapp.activity;
 
 
 import android.annotation.SuppressLint;
@@ -10,11 +10,12 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
 
-import lol.niconico.dev.R;
 import lol.niconico.dev.app.Constants;
-import lol.niconico.dev.databinding.AcWebCommonBinding;
+import lol.niconico.dev.ui.activity.base.BaseActivity;
 import lol.niconico.dev.util.CircularAnim;
 import lol.niconico.dev.util.WebViewUtils;
+import lol.niconico.testapp.R;
+import lol.niconico.testapp.databinding.AcWebCommonBinding;
 
 
 /**
