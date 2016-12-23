@@ -7,15 +7,15 @@ config.load(new FileInputStream(configFile))//读取文件
 
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion config.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion config.ANDROID_BUILD_TOOLS_VERSION
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 8
-        versionName "1.0.7"
+        minSdkVersion config.ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion config.ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode config.DEV_VERSION_CODE as int
+        versionName config.DEV_VERSION_NAME
 
     }
 
@@ -48,14 +48,14 @@ dependencies {
     compile "com.android.support:appcompat-v7:${config.SUPPORT_LIBRARY}"
     compile "com.android.support:gridlayout-v7:${config.SUPPORT_LIBRARY}"
 
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile "com.github.bumptech.glide:glide:${config.GLIDE_VERSION}"
 
     // retrofit 需要的库
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
+    compile "com.squareup.retrofit2:retrofit:${config.RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:converter-gson:${config.RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${config.RETROFIT_VERSION}"
+    compile "io.reactivex:rxandroid:${config.RXJAVA_VERSION}"
+    compile "io.reactivex:rxjava:${config.RXANDROID_VERSION}"
 
     compile 'com.yanzhenjie:album:1.0.0'
 }

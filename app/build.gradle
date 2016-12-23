@@ -1,21 +1,47 @@
 apply plugin: 'com.android.application'
 
+
+def configFile = new File(System.getProperty("user.dir"), 'config.properties')
+Properties config = new Properties()
+config.load(new FileInputStream(configFile))//读取文件
+
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+
+    compileSdkVersion config.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion config.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "lol.niconico.testapp"
-        minSdkVersion 15
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+
+        minSdkVersion config.ANDROID_BUILD_MIN_SDK_VERSION as int
+        targetSdkVersion config.ANDROID_BUILD_TARGET_SDK_VERSION as int
+        versionCode config.VERSION_CODE as int
+        versionName config.VERSION_NAME
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
         }
     }
 
