@@ -58,4 +58,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile project(':dev')
+
+    compile 'com.airbnb.android:lottie:1.0.0'
 }

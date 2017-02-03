@@ -54,8 +54,8 @@ dependencies {
     compile "com.squareup.retrofit2:retrofit:${config.RETROFIT_VERSION}"
     compile "com.squareup.retrofit2:converter-gson:${config.RETROFIT_VERSION}"
     compile "com.squareup.retrofit2:adapter-rxjava:${config.RETROFIT_VERSION}"
-    compile "io.reactivex:rxandroid:${config.RXJAVA_VERSION}"
-    compile "io.reactivex:rxjava:${config.RXANDROID_VERSION}"
+    compile "io.reactivex:rxandroid:${config.RXANDROID_VERSION}"
+    compile "io.reactivex:rxjava:${config.RXJAVA_VERSION}"
 
     compile 'com.yanzhenjie:album:1.0.0'
 }
