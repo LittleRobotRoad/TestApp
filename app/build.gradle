@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 
-def configFile = new File(System.getProperty("user.dir"), 'config.properties')
+def configFile = new File(System.getProperty("user.dir"), 'gradle.properties')
 Properties config = new Properties()
 config.load(new FileInputStream(configFile))//读取文件
 
