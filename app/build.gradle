@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 
-def configFile = new File(System.getProperty("user.dir"), 'config.properties')
+def configFile = new File(System.getProperty("user.dir"), 'gradle.properties')
 Properties config = new Properties()
 config.load(new FileInputStream(configFile))//读取文件
 
@@ -54,10 +54,13 @@ android {
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs' //解决 react native 的包依赖版本错误
     })
     testCompile 'junit:junit:4.12'
 
     compile project(':dev')
 
     compile 'com.airbnb.android:lottie:1.0.0'
+
+    compile "com.facebook.react:react-native:+" // From node_modules.
 }
