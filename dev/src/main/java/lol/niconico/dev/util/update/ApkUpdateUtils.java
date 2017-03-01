@@ -6,10 +6,15 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 
-import lol.niconico.dev.app.BaseApplication;
+import java.io.File;
+
 import lol.niconico.dev.util.SpUtil;
+import lol.niconico.dev.util.Utils;
 
 
 /**
@@ -19,22 +24,20 @@ public class ApkUpdateUtils {
     public static final String TAG = ApkUpdateUtils.class.getSimpleName();
 
     private static final String KEY_DOWNLOAD_ID = "downloadId";
+    public static final String APP_UPDATE_FILE_NAME = "niconicodevupdate.apk";
 
     public static void download(Context context, String url, String title) {
         long downloadId = SpUtil.getInstance().getLong(KEY_DOWNLOAD_ID, -1L);
+        Log.e(TAG, "download: " + downloadId);
         if (downloadId != -1L) {
             FileDownloadManager fdm = FileDownloadManager.getInstance(context);
             int status = fdm.getDownloadStatus(downloadId);
             if (status == DownloadManager.STATUS_SUCCESSFUL) {
-                //启动更新界面
-                Uri uri = fdm.getDownloadUri(downloadId);
-                if (uri != null) {
-                    if (compare(getApkInfo(context, uri.getPath()), context)) {
-                        startInstall(context, uri);
-                        return;
-                    } else {
-                        fdm.getDm().remove(downloadId);
-                    }
+                if (compare(getApkInfo(context, downloadId), context)) {
+                    startInstall(context);
+                    return;
+                } else {
+                    fdm.getDm().remove(downloadId);
                 }
                 start(context, url, title);
             } else if (status == DownloadManager.STATUS_FAILED) {
@@ -54,11 +57,23 @@ public class ApkUpdateUtils {
         Log.d(TAG, "apk start download " + id);
     }
 
-    public static void startInstall(Context context, Uri uri) {
-        Intent install = new Intent(Intent.ACTION_VIEW);
-        install.setDataAndType(uri, "application/vnd.android.package-archive");
-        install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(install);
+    public static void startInstall(Context context) {
+
+        File file = new File(
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                , APP_UPDATE_FILE_NAME);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (Build.VERSION.SDK_INT >= 24) {
+            Uri apkUri = FileProvider.getUriForFile(context, "lol.niconico.dev.fileProvider", file);
+            //添加这一句表示对目标应用临时授权该Uri所代表的文件
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+        } else {
+            intent.setDataAndType(Uri.fromFile(file),
+                    "application/vnd.android.package-archive");
+        }
+        context.startActivity(intent);
     }
 
 
@@ -66,9 +81,14 @@ public class ApkUpdateUtils {
      * 获取apk程序信息[packageName,versionName...]
      *
      * @param context Context
-     * @param path    apk path
+     * @param downloadId
      */
-    private static PackageInfo getApkInfo(Context context, String path) {
+    private static PackageInfo getApkInfo(Context context,long downloadId) {
+        String path = FileDownloadManager.getInstance(context).getDownloadPath(downloadId);
+        if (path.startsWith("file://")){
+            path = path.substring("file://".length(),path.length());
+        }
+        Log.i(TAG, "getApkInfo   path: "+path );
         PackageManager pm = context.getPackageManager();
         PackageInfo info = pm.getPackageArchiveInfo(path, PackageManager.GET_ACTIVITIES);
         if (info != null) {
@@ -110,8 +130,8 @@ public class ApkUpdateUtils {
 
     public static int getVersion() {
         try {
-            PackageManager manager = BaseApplication.mContext.getPackageManager();
-            PackageInfo info = manager.getPackageInfo(BaseApplication.mContext.getPackageName(), 0);
+            PackageManager manager = Utils.getContext().getPackageManager();
+            PackageInfo info = manager.getPackageInfo(Utils.getContext().getPackageName(), 0);
             return info.versionCode;
         } catch (Exception e) {
             e.printStackTrace();
