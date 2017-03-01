@@ -10,7 +10,7 @@
    render() {
      return (
        <View style={styles.container}>
-         <Text style={styles.hello}>Hello, World</Text>
+         <Text style={styles.hello}>Hello World</Text>
        </View>
      )
    }

@@ -1,0 +1,16 @@
+{
+  "name": "react-native-demo",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "index.android.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output app/src/main/assets/index.android.bundle --sourcemap-output app/src/main/assets/index.android.map --assets-dest app/src/main/"
+  },
+  "author": "ZhangQianqian",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-native": "^0.41.2"
+  }
+}

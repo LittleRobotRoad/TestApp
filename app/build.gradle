@@ -20,6 +20,10 @@ android {
         versionName config.VERSION_NAME
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
     }
     buildTypes {
         release {
@@ -42,6 +46,10 @@ android {
             zipAlignEnabled false
             shrinkResources false
             signingConfig signingConfigs.debug
+
+            manifestPlaceholders = [  //manifest 变量
+                    APP_LOGO: "@mipmap/ic_launcher",
+                    APP_NAME: "@string/app_name"]
         }
     }
 
@@ -50,6 +58,7 @@ android {
     }
 
 }
+
 
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

@@ -4,11 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="${APP_NAME}"
+        android:icon="${APP_LOGO}"
         android:supportsRtl="true"
+        android:name=".app.ReactApp"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.IReactNativeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -17,6 +18,7 @@
         </activity>
 
         <activity android:name=".activity.CommonWebActivity"/>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
     </application>
 
 </manifest>
